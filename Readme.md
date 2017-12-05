@@ -28,3 +28,14 @@ by running the following commands:
 * Run `node` to access JS via node and type JS in the command line.
     * `console.log('Hello There');`
     * `var hi = 'Hello There'`
+
+## What is NPM?
+
+* Package Management for NodeJS.
+* `npm init` initialises any NPM package.json for the specific application.
+
+### package.json
+
+* Contains our dependencies/packages required/installed for our application.
+`npm install express --save` will allow NPM to download express in out application
+and save the dependency name in our package.json file. 
