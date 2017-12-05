@@ -14,3 +14,7 @@
 * Unopinionated and minimalist web framework used to build out a website.
 * It will handle our routing, page rendering and etc for us.
 * Ultimately it is an NPM package that will site inside NodeJS.
+
+## Node Installation
+
+You can download NodeJS from[here](https://nodejs.org/en/download/).
