@@ -18,3 +18,13 @@
 ## Node Installation
 
 You can download NodeJS from[here](https://nodejs.org/en/download/).
+
+## Node Commands
+
+You can verify that Node is installed and working on your machine
+by running the following commands:
+
+* Run `node --version` to check the node version installed.
+* Run `node` to access JS via node and type JS in the command line.
+    * `console.log('Hello There');`
+    * `var hi = 'Hello There'`
