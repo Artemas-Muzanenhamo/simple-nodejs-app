@@ -56,3 +56,18 @@ so anything that is `4.13.3`, `4.13.4`, `4.13.5` etc. But if `4.13.3` went up to
 
 `4.13.3` - Means that NPM will install ONLY that specific version and it will not 
 pull any previous or future version.
+
+## NPM Start
+
+You may want to deploy or pass your app to be used by the next person,
+so instead of the next person having knowledge of what the main JS file is called,
+you can create a script in your `package.json` that can be associated with your 
+`node app.js` command. You can do this by adding 
+```
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js" <== ADD THIS SCRIPT!
+  },
+```
+
+Now you can run `npm start` and that should work the same as `node app.js`.
