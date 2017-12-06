@@ -134,7 +134,7 @@ Notice if you try to run `gulp` it will say that there is no gulpfile found.
 So you'll need to create a gulpfile that is called:
 `gulpfile.js`
 
-## What is WireDep
+## What is [WireDep](https://github.com/taptapship/wiredep)
 
 * Wires Bower dependencies to your source code.
 * Installed via NPM.
@@ -223,3 +223,9 @@ If the project has multiple files, such as a javascript and a css file, main can
   }
 }
 ```
+
+### What is [Gulp-Inject](https://www.npmjs.com/package/gulp-inject)?
+
+* A stylesheet, javascript and webcomponent reference injection plugin for gulp. No more manual editing of your index.html!
+* Gulp-inject takes a stream of source files, transforms each file to a string and injects each transformed string into placeholders in the target stream files.
+* Default transforms and placeholders exists for injecting files into html, jade, pug, jsx , less, slm, haml and sass / scss files.

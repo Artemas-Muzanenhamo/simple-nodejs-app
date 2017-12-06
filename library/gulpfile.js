@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
+var nodemon = require('gulp-nodemon');
 
 var jsFiles = ['*.js', 'src/**/*.js'];
 
@@ -37,4 +38,20 @@ gulp.task('inject', function () {
         .pipe(wiredep(options))
         .pipe(inject(injectSrc, injectOptions))
         .pipe(gulp.dest('./src/views'));
+});
+
+gulp.task('serve', ['style', 'inject'], function () {
+    var options = { // Option - Things needed in order for this task to run
+        script: 'app.js', // What is it going to run.
+        delayTime: 1,
+        env: {
+            'PORT': 3000
+        },
+        watch: jsFiles // The file nodemon will look for and if any changes, restart everything.
+    };
+
+    return nodemon(options)
+        .on('restart', function (ev) {
+            console.log('Restarting...');
+        });
 });

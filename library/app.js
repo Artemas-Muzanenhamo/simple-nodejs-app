@@ -1,7 +1,7 @@
 var express = require('express'); // This pulls in a package called Express.
 var app = express(); // This gives us an instance of express that we can do stuff with.
 
-var port = 5000; // This is the port that Express listens on.
+var port = process.env.PORT || 5000; // This is the port that Express listens on.
 
 /**
  * app.use() - Use third-party middleware to add functionality to Express apps.
