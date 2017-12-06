@@ -72,7 +72,7 @@ you can create a script in your `package.json` that can be associated with your
 
 Now you can run `npm start` and that should work the same as `node app.js`.
 
-## Bower
+## What is Bower?
 
 * Package manager for the web.
 * Angular, Bootstrap or FontAwsome are installed via Bower.
@@ -96,3 +96,40 @@ access bower via the command line.
 
 * This will then produce a bower.json file to hold details and dependencies for your
 frontend.
+
+## What is Gulp?
+
+* Task manager for your web projects.
+* Installed with NPM.
+* Easy to use.
+* Code based configuration.
+* Package based.
+
+## JSHint
+
+* Code quality enforcement.
+* Detects potential errors.
+* Enforces coding conventions.
+* Easily configurable.
+* Open source.
+
+## JSCS
+
+* Coding style enforcement.
+* Enforces style conventions.
+* Easily configurable.
+* Open Source.
+
+### Gulp Install
+
+To install Gulp you'll need to run the following command:
+
+`npm install gulp -g`
+
+After that you'll need to install a local version of Gulp by running:
+
+`npm install gulp --save-dev`
+
+Notice if you try to run `gulp` it will say that there is no gulpfile found.
+So you'll need to create a gulpfile that is called:
+`gulpfile.js`
