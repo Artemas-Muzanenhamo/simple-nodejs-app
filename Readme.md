@@ -71,3 +71,28 @@ you can create a script in your `package.json` that can be associated with your
 ```
 
 Now you can run `npm start` and that should work the same as `node app.js`.
+
+## Bower
+
+* Package manager for the web.
+* Angular, Bootstrap or FontAwsome are installed via Bower.
+* NPM is the backend package manager, Bower is the frontend package manager.
+* Installed with NPM.
+* Flat package hierarchy.
+* Works similar to NPM.
+* Has a bower.json just as NPM has package.json
+
+### Bower Install
+
+* You can install bower using the `-g` parameter to allow you to be able to 
+access bower via the command line. 
+* To install just run the following command:
+
+`npm install bower -g`
+
+* To initialise bower you will need to run the following command:
+
+`bower init`
+
+* This will then produce a bower.json file to hold details and dependencies for your
+frontend.

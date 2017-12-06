@@ -1,3 +1,4 @@
 /.idea/
 /library/package-lock.json
 library/node_modules/
+library/public/lib/
