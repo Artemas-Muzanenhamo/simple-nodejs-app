@@ -133,3 +133,8 @@ After that you'll need to install a local version of Gulp by running:
 Notice if you try to run `gulp` it will say that there is no gulpfile found.
 So you'll need to create a gulpfile that is called:
 `gulpfile.js`
+
+## What is WireDep
+
+* Wires Bower dependencies to your source code.
+* Installed via NPM.
