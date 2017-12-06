@@ -16,12 +16,25 @@ gulp.task('style', function() {
 
 gulp.task('inject', function () {
     var wiredep = require('wiredep').stream;
+    var inject = require('gulp-inject');
+    /**
+     * 1st Param - Where your source files are located.
+     * 2nd Param - Option to read all the files. In this case, No.
+     */
+    var injectSrc = gulp.src(['./public/css/*.css',
+                            './public/js/*.js'], {read: false});
+    var injectOptions = {
+        ignorePath: '/public'
+    };
+
     var options = {
         bowerJson: require('./bower.json'),
-        directory: './public/lib'
+        directory: './public/lib',
+        ignorePath: '../../public'
     };
 
     return gulp.src('./src/views/*.html')
         .pipe(wiredep(options))
+        .pipe(inject(injectSrc, injectOptions))
         .pipe(gulp.dest('./src/views'));
 });

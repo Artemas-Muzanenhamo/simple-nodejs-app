@@ -138,3 +138,88 @@ So you'll need to create a gulpfile that is called:
 
 * Wires Bower dependencies to your source code.
 * Installed via NPM.
+
+
+
+### Installing JS with Wiredep
+
+Insert placeholders in your code where your dependencies will be injected:
+
+```html
+<html>
+<head>
+  <!-- bower:css -->
+  <!-- endbower -->
+</head>
+<body>
+  <!-- bower:js -->
+  <!-- endbower -->
+</body>
+</html>
+```
+
+Let `wiredep` work its magic:
+
+```javascript
+gulp.task('inject', function () {
+    var wiredep = require('wiredep').stream;
+    var options = {
+        bowerJson: require('./bower.json'),
+        directory: './public/lib'
+    };
+
+    return gulp.src('./src/views/*.html')
+        .pipe(wiredep(options))
+        .pipe(gulp.dest('./src/views'));
+});
+```
+
+```html
+<html>
+<head>
+  <!-- bower:css -->
+  <!-- endbower -->
+</head>
+<body>
+  <!-- bower:js -->
+        <script src="../../public/lib/jquery/dist/jquery.js"></script>
+        <script src="../../public/lib/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- endbower -->
+</body>
+</html>
+```
+
+### Bower Overrides
+
+To override a property, or lack of, in one of your dependency's bower.json file, you may specify an overrides object in your own bower.json.
+
+As an example, this is what your bower.json may look like if you wanted to override package-without-main's main file (the path is relative to your dependency's folder):
+```json
+{
+  ...
+  "dependencies": {
+    "package-without-main": "1.0.0"
+  },
+  "overrides": {
+    "package-without-main": {
+      "main": "dist/package-without-main.js"
+    }
+  }
+}
+```
+
+If the project has multiple files, such as a javascript and a css file, main can be an array, as such:
+
+```json
+{
+  ...
+  "dependencies": {
+    "package-without-main": "1.0.0"
+  },
+  "overrides": {
+    "package-without-main": {
+      "main": ["dist/package-without-main.css", "dist/package-without-main.js"]
+    }
+  }
+}
+```
