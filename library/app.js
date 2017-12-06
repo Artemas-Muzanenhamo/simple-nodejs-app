@@ -13,7 +13,7 @@ app.use(express.static('src/views')); // Serves static resources in the `src/vie
  * app.get() will allow routing by allowing requests to be able to route
  * to a desired location on the application and get a response.
  */
-app.get("/", function(req, res){
+app.get('/', function(req, res){
     res.send('Hello World');
 });
 
