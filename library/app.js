@@ -2,7 +2,14 @@ var express = require('express'); // This pulls in a package called Express.
 var app = express(); // This gives us an instance of express that we can do stuff with.
 
 var port = process.env.PORT || 5000; // This is the port that Express listens on.
-var bookRouter = require('./src/routes/bookRoutes');
+var nav = [{
+    Link: '/Books',
+    Text: 'Book'
+}, {
+    Link: '/Authors',
+    Text: 'Author'
+}];
+var bookRouter = require('./src/routes/bookRoutes')(nav);
 
 /**
  * app.use() - Use third-party middleware to add functionality to Express apps.
