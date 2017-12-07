@@ -226,6 +226,16 @@ If the project has multiple files, such as a javascript and a css file, main can
 
 ### What is [Gulp-Inject](https://www.npmjs.com/package/gulp-inject)?
 
-* A stylesheet, javascript and webcomponent reference injection plugin for gulp. No more manual editing of your index.html!
+* A stylesheet, javascript and web component reference injection plugin for gulp. No more manual editing of your index.html!
 * Gulp-inject takes a stream of source files, transforms each file to a string and injects each transformed string into placeholders in the target stream files.
 * Default transforms and placeholders exists for injecting files into html, jade, pug, jsx , less, slm, haml and sass / scss files.
+
+## Templating Engines
+
+There are several templating engines out there to use with NodeJS and below are a few to check out:
+
+* [Jade](http://jade-lang.com/)
+* [Handlebars](http://handlebarsjs.com/)
+* [EJS](http://ejs.co/)
+
+We will work with EJS in this application.

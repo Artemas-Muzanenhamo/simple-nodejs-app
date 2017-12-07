@@ -7,14 +7,16 @@ var port = process.env.PORT || 5000; // This is the port that Express listens on
  * app.use() - Use third-party middleware to add functionality to Express apps.
  */
 app.use(express.static('public')); // Serves static resources in the `public` directory
-app.use(express.static('src/views')); // Serves static resources in the `src/views` directory
+
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
 
 /**
  * app.get() will allow routing by allowing requests to be able to route
  * to a desired location on the application and get a response.
  */
-app.get('/', function(req, res){
-    res.send('Hello World');
+app.get('/', function(req, res) {
+    res.render('index', {title: 'Hello from render', list: ['a', 'b']});
 });
 
 /**
@@ -23,6 +25,6 @@ app.get('/', function(req, res){
  * in our case app.listen() will execute function(err) once it
  * is done whatever it will be doing.
  */
-app.listen(port, function(err){
+app.listen(port, function(err) {
     console.log('Running Server on Port ' + port);
 });
