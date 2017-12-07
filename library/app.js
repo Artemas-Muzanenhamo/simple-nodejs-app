@@ -15,8 +15,15 @@ app.set('view engine', 'ejs');
  * app.get() will allow routing by allowing requests to be able to route
  * to a desired location on the application and get a response.
  */
-app.get('/', function(req, res) {
-    res.render('index', {title: 'Hello from render', list: ['a', 'b']});
+app.get('/', function (req, res) {
+    res.render('index', {
+        title: 'Hello from render',
+        nav: [{
+            Link: '/Books', Text: 'Books'
+        }, {
+            Link: '/Authors', Text: 'Authors'
+        }]
+    });
 });
 
 /**
@@ -25,6 +32,6 @@ app.get('/', function(req, res) {
  * in our case app.listen() will execute function(err) once it
  * is done whatever it will be doing.
  */
-app.listen(port, function(err) {
+app.listen(port, function (err) {
     console.log('Running Server on Port ' + port);
 });
