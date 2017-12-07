@@ -12,9 +12,72 @@ app.use(express.static('public')); // Serves static resources in the `public` di
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
+var books = [
+    {
+        title: 'War and Peace',
+        genre: 'Historical Fiction',
+        author: 'Lev Nikolayevich Tolstoy',
+        read: false
+    },
+    {
+        title: 'Les Misérables',
+        genre: 'Historical Fiction',
+        author: 'Victor Hugo',
+        read: false
+    },
+    {
+        title: 'The Time Machine',
+        genre: 'Science Fiction',
+        author: 'H. G. Wells',
+        read: false
+    },
+    {
+        title: 'A Journey into the Center of the Earth',
+        genre: 'Science Fiction',
+        author: 'Jules Verne',
+        read: false
+    },
+    {
+        title: 'The Dark World',
+        genre: 'Fantasy',
+        author: 'Henry Kuttner',
+        read: false
+    },
+    {
+        title: 'The Wind in the Willows',
+        genre: 'Fantasy',
+        author: 'Kenneth Grahame',
+        read: false
+    },
+    {
+        title: 'Life On The Mississippi',
+        genre: 'History',
+        author: 'Mark Twain',
+        read: false
+    },
+    {
+        title: 'Childhood',
+        genre: 'Biography',
+        author: 'Lev Nikolayevich Tolstoy',
+        read: false
+    }
+];
+
+/**
+ * When we use the res.render(), it will look at the app.set('views', './src/views') and
+ * find the view specified in the render() function.
+ */
 bookRouter.route('/')
     .get(function (req, res) {
-        res.send('Hello Books');
+        res.render('books', {
+            title: 'Books',
+            nav: [{
+                Link: '/Books', Text: 'Books'
+            }, {
+                Link: '/Authors', Text: 'Authors'
+            }],
+            books: books
+        });
     });
 
 bookRouter.route('/single')
