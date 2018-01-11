@@ -10,6 +10,7 @@ var nav = [{
     Text: 'Author'
 }];
 var bookRouter = require('./src/routes/bookRoutes')(nav);
+var authorRouter = require('./src/routes/authorRoutes')(nav);
 
 /**
  * app.use() - Use third-party middleware to add functionality to Express apps.
@@ -20,6 +21,7 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 app.use('/Books', bookRouter);
+app.use('/Authors', authorRouter);
 
 /**
  * app.get() will allow routing by allowing requests to be able to route
