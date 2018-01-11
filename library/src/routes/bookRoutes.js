@@ -1,5 +1,4 @@
 var express = require('express'); // Need this to access our Router
-
 var bookRouter = express.Router();
 
 var router = function (nav) {

@@ -1,5 +1,4 @@
 var express = require('express');
-
 var authorRouter = express.Router();
 
 var router = function (nav) {
